@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoteSpace | Welcome</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: #F1F5F9;
+    color: #1E293B;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 610px;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* LEFT SIDE */
+
+.left-panel {
+    background: #0F172A;
+    color: white;
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 65px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #2DD4BF;
+}
+
+.left-panel h1 {
+    font-size: 39px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.left-panel h1 span {
+    color: #2DD4BF;
+}
+
+.left-panel p {
+    color: #CBD5E1;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.features {
+    margin-top: 35px;
+}
+
+.feature {
+    margin: 15px 0;
+    color: #E2E8F0;
+    font-size: 14px;
+}
+
+.feature span {
+    color: #2DD4BF;
+    margin-right: 10px;
+}
+
+/* RIGHT SIDE */
+
+.right-panel {
+    padding: 55px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-heading {
+    font-size: 29px;
+    font-weight: 750;
+    margin-bottom: 8px;
+    color: #0F172A;
+}
+
+.subtitle {
+    color: #64748B;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 650;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #CBD5E1;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #F8FAFC;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #0D9488;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.12);
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 9px;
+    background: #0D9488;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.primary-btn:hover {
+    background: #0F766E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
+}
+
+.primary-btn:active {
+    transform: scale(0.97);
+}
+
+.switch-text {
+    text-align: center;
+    margin-top: 23px;
+    font-size: 14px;
+    color: #64748B;
+}
+
+.switch-text span {
+    color: #0D9488;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.switch-text span:hover {
+    text-decoration: underline;
+}
+
+.message {
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: center;
+    min-height: 20px;
+}
+
+.success {
+    color: #059669;
+}
+
+.error {
+    color: #DC2626;
+}
+
+.hidden {
+    display: none;
+}
+
+@media(max-width: 750px) {
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .left-panel {
+        padding: 35px;
+    }
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    .left-panel h1 {
+        font-size: 30px;
+    }
+
+    .features {
+        display: none;
+    }
+
+    .right-panel {
+        padding: 40px 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+        <div class="logo">NOTE<span>SPACE</span></div>
+
+        <h1>Your thoughts,<br>
+        <span>beautifully organised.</span></h1>
+
+        <p>
+            Capture your ideas, organise your daily tasks
+            and keep all your important notes in one place.
+        </p>
+
+        <div class="features">
+            <div class="feature"><span>✓</span> Create and manage notes</div>
+            <div class="feature"><span>✓</span> Secure user authentication</div>
+            <div class="feature"><span>✓</span> Simple and organised workspace</div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+
+        <!-- LOGIN FORM -->
+
+        <div id="loginForm">
+            <h2 class="form-heading">Welcome back!</h2>
+            <p class="subtitle">Login to access your personal workspace.</p>
+
+            <form id="loginFormElement">
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail"
+                    placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword"
+                    placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="primary-btn" id="loginBtn">
+                    Sign In
+                </button>
+            </form>
+
+            <div id="loginMessage" class="message"></div>
+
+            <p class="switch-text">
+                Don't have an account?
+                <span onclick="showRegister()">Create Account</span>
+            </p>
+        </div>
+
+        <!-- REGISTER FORM -->
+
+        <div id="registerForm" class="hidden">
+            <h2 class="form-heading">Create Account</h2>
+            <p class="subtitle">Join NoteSpace and organise your ideas.</p>
+
+            <form id="registerFormElement">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="registerName"
+                    placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="registerEmail"
+                    placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword"
+                    placeholder="Create a password" required minlength="6">
+                </div>
+
+                <button type="submit" class="primary-btn" id="registerBtn">
+                    Create Account
+                </button>
+            </form>
+
+            <div id="registerMessage" class="message"></div>
+
+            <p class="switch-text">
+                Already have an account?
+                <span onclick="showLogin()">Sign In</span>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const USER_API = "http://localhost:3000/users";
+
+// Switch to registration
+function showRegister() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("registerForm").classList.remove("hidden");
+    clearMessages();
+}
+
+// Switch to login
+function showLogin() {
+    document.getElementById("registerForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+    clearMessages();
+}
+
+function clearMessages() {
+    document.getElementById("loginMessage").textContent = "";
+    document.getElementById("registerMessage").textContent = "";
+}
+
+// Display messages
+function showMessage(id, message, type) {
+    const element = document.getElementById(id);
+    element.textContent = message;
+    element.className = "message " + type;
+}
+
+// REGISTER
+document.getElementById("registerFormElement")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("registerName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value;
+
+    const btn = document.getElementById("registerBtn");
+
+    btn.disabled = true;
+    btn.textContent = "Creating Account...";
+
+    try {
+        const response = await fetch(USER_API + "/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                email,
+                password
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || data.error || "Registration failed");
+        }
+
+        showMessage(
+            "registerMessage",
+            data.message || "Account created successfully! Please login.",
+            "success"
+        );
+
+        document.getElementById("registerFormElement").reset();
+
+        setTimeout(showLogin, 1500);
+
+    } catch(error) {
+        showMessage("registerMessage", error.message, "error");
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Create Account";
+    }
+});
+
+// LOGIN
+document.getElementById("loginFormElement")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    const btn = document.getElementById("loginBtn");
+
+    btn.disabled = true;
+    btn.textContent = "Logging in...";
+
+    try {
+        const response = await fetch(USER_API + "/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.message || data.error || "Login failed");
+        }
+
+        if (!data.token) {
+            throw new Error("Login response did not contain a token.");
+        }
+
+        localStorage.setItem("token", data.token);
+
+        showMessage("loginMessage", "Login successful!", "success");
+
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 700);
+
+    } catch(error) {
+        showMessage("loginMessage", error.message, "error");
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Sign In";
+    }
+});
+
+// Redirect if already logged in
+if (localStorage.getItem("token")) {
+    window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
